@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cool animals Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Check Service Workers support-->
+  <script>
+      /**
+       * Different versions of Chrome support different caching methods, this complicates a bit the feature detection.
+       * The support of ServiceWorkers and the addAll method should be checked.
+       *
+       * https://developer.mozilla.org/en-US/docs/Web/API/Cache
+       */
+      if ('serviceWorker' in navigator && (typeof Cache !== 'undefined' && Cache.prototype.addAll)) {
+          navigator.serviceWorker.register('/cats/sw-cats.js', {scope: '/cats/'})
+          .catch(function (err) {
+              // Registration failed :(
+              console.error('%c Service workers: ', 'color:black; background-color: orange', 'ServiceWorker registration failed: ', err);
+          });
+      }
+  </script>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js"></script>
+
+  <style>
+    @font-face {
+      font-family: 'ClarendonTextPro';
+      src: url('/fonts/clarendon-text-pro-regular.woff2') format("woff2"),
+      url('/fonts/clarendon-text-pro-regular.woff') format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+</head>
+<body>
+  <h3>Cats are cool!</h3>
+  <div class="container">
+    <img src="/images/cats/1.jpg">
+    <img src="/images/cats/2.jpg">
+    <img src="/images/cats/3.jpg">
+    <img src="/images/cats/4.jpg">
+    <img src="/images/cats/5.jpg">
+    <img src="/images/cats/6.jpg">
+    <img src="/images/cats/7.jpg">
+    <img src="/images/cats/8.jpg">
+    <img src="/images/cats/9.jpg">
+    <img src="/images/cats/10.jpg">
+    <img src="/images/cats/11.jpg">
+    <img src="/images/cats/12.jpg">
+  </div>
+</body>
+</html>

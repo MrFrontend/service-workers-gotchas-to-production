@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cool animals Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Check Service Workers support-->
+  <script>
+      /**
+       * Different versions of Chrome support different caching methods, this complicates a bit the feature detection.
+       * The support of ServiceWorkers and the addAll method should be checked.
+       *
+       * https://developer.mozilla.org/en-US/docs/Web/API/Cache
+       */
+      if ('serviceWorker' in navigator && (typeof Cache !== 'undefined' && Cache.prototype.addAll)) {
+           navigator.serviceWorker.register('sw-hello-world.js', {scope: './'})
+          // navigator.serviceWorker.register('sw-install-as-dependency.js', {scope: './'})
+          // navigator.serviceWorker.register('sw-install-not-as-dependency.js', {scope: './'})
+          // navigator.serviceWorker.register('sw-on-activate.js', {scope: './'})
+          // navigator.serviceWorker.register('sw-generic-fallback.js', {scope: './'})
+
+          // .then(function (registration) {
+          //   console.log('%c Service worker: ', 'color:black; background-color: #FFD700', 'registered under the scope: ', registration.scope);
+          // })
+
+           .catch(function (err) {
+             // Registration failed :(
+             console.error('%c Service workers: ', 'color:black; background-color: #FFD700', 'ServiceWorker registration failed: ', err);
+           });
+      }
+  </script>
+
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js"></script>
+
+  <style>
+    @font-face {
+      font-family: 'ClarendonTextPro';
+      src: url('/fonts/clarendon-text-pro-regular.woff2') format("woff2"),
+      url('/fonts/clarendon-text-pro-regular.woff') format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+</head>
+<body>
+  <h3>Cute animals around Internet</h3>
+  <div class="container">
+    <a href="/monkeys/" class="item">
+      <img src="/images/monkeys/4.jpg">
+      Monkeys
+    </a>
+    <a href="/cats/" class="item">
+      <img src="/images/cats/2.jpg">
+      Cats
+    </a>
+    <a href="/grumpy-cat/" class="item">
+      <img src="/images/grumpy-cat/3.jpg">
+      Grumpy cat
+    </a>
+  </div>
+</body>
+</html>

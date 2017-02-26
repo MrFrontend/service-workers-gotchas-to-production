@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Settings folder for JetBrain's IDE (IntelliJ, WebStorm,...)
+.idea/
+
+.DS_Store

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cool animals Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js"></script>
+
+  <script>
+
+    /**
+     * If the article is cached we check the "Available offline" checkbox.
+     */
+    function detectArticleCached(){
+      caches.has('offline-grumpy-cat').then(function(cacheFound) {
+        document.getElementById('checkbox-article-offline').checked = cacheFound;
+      });
+    }
+
+    /**
+     * Cache this article offline when storeAssets is true
+     * Delete the cache for this article when storeAssets is false
+     *
+     * @param storeAssets {boolean}
+     */
+    function makeArticleAvailableOffline(storeAssets) {
+      if (storeAssets === true){
+        var articleAssets = [
+          '/grumpy-cat/',
+          '/grumpy-cat/index.html',
+          '/images/grumpy-cat/1.jpg',
+          '/images/grumpy-cat/2.jpg',
+          '/images/grumpy-cat/3.jpg'
+        ];
+
+        // Cache all the necessary assets for this article
+        cacheAssets('offline-grumpy-cat', articleAssets, true);
+        
+        console.log('%c Article cached ', 'color:black; background-color: #1E90FF');
+      } else {
+        // Delete cached assets
+        caches.delete('offline-grumpy-cat');
+        
+        console.log('%c Deleted article cache ', 'color:black; background-color: #1E90FF');
+      }
+    }
+
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'ClarendonTextPro';
+      src: url('/fonts/clarendon-text-pro-regular.woff2') format("woff2"),
+      url('/fonts/clarendon-text-pro-regular.woff') format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+</head>
+<body onload="detectArticleCached()">
+  <label><input id="checkbox-article-offline" type="checkbox" onclick="makeArticleAvailableOffline(checked)">Available offline</label>
+  <div class="container">
+    <h3>Grumpy cat</h3>
+    Tardar Sauce (born April 4, 2012),[1] commonly known as Grumpy Cat, is a cat Internet and media personality and actress. She is known for her permanently "grumpy" facial appearance, which is caused by an underbite and feline dwarfism.[2][3][4] She came to prominence when a photograph of her was posted on social news website Reddit by Bryan Bundesen, the brother of her owner Tabatha, in September 2012,[2][5] and lolcats and parodies created from the photograph by Reddit users went viral. She is the subject of a popular internet meme in which negative lolcats (such as "I Had Fun Once... It Was Awful") are made from photographs of her.
+
+    <img src="/images/grumpy-cat/1.jpg">
+    <img src="/images/grumpy-cat/2.jpg">
+    <img src="/images/grumpy-cat/3.jpg">
+
+    <h3>Background</h3>
+    Tardar Sauce was one of a litter of four kittens born to a calico mother and a father of an unknown breed at the home of her owner, Tabatha Bundesen.[6][7] The Bundesens say that Tardar Sauce's face appears grumpy because the feline has a form of dwarfism. She and her brother Pokey were born to normal parents with "a flat face, bubble eyes, and a short tail".[8] Tardar Sauce is undersized and has hind legs that "are a bit different".[2][4] Although she has a "grumpy" appearance and is called "Grumpy Cat", according to the Bundesens, 99% of the time she is a "normal kitty".
+
+    Ben Lashes is Grumpy Cat's manager who also represents Keyboard Cat and Nyan Cat.[10][11] Tabatha Bundesen took a leave of absence from her day job at Red Lobster to manage Grumpy Cat's schedule while Bryan Bundesen manages the Grumpy Cat website, Facebook, YouTube and Twitter accounts.
+
+    <h3>Media appearances</h3>
+    Photo sessions are only once a week, and handling by strangers is limited.[2] At South by Southwest Interactive, Tardar Sauce made limited two-hour appearances each day as Grumpy Cat, bringing about world peace and free cookies.[14]
+
+    Grumpy Cat has appeared on NBC News's Today,[15] ABC News's Good Morning America,[16] CBS Evening News, Anderson Live,[17] VH1's Big Morning Buzz Live, The Soup[18] and FOX's American Idol. Grumpy Cat appeared on the "Garage Logic" radio broadcast the day of the Minnesota State Fair live Internet Cat Film Festival. Grumpy Cat promoted Grumpy Cat: A Grumpy Book at BookExpo America.[13] She attended her book's launch at Kitson and The Grove's Barnes & Noble in Los Angeles.[19][20] In 2014, she appeared in a television commercial for Honey Nut Cheerios.[21] She also appeared on the season finale of The Bachelorette and was a special guest on the November 17 edition of WWE Monday Night Raw.[22]
+
+    In March 2013, Grumpy Cat attended SXSW Interactive, hosted at the Mashable House.[4][5][23] Friskies paid travel expenses to Austin in order to film "Will Kitty Play With It?"[13][24] CNN, CBS, and CNET called Grumpy Cat the undisputed "biggest star" of SXSW Interactive over Elon Musk, Al Gore, and Neil Gaiman.[5][25][26] Over 600[27] fans, including Dennis Crowley, waited for hours in the line, which was nearly three blocks long, to take a photo.[4][5][28] Ian Somerhalder took photos with Grumpy Cat and called her "my new love", "very peaced out", "sweet as pumpkin pie", and "kind of amazing".
+
+    In October 2016, Grumpy Cat made a special appearance on Disney Channel's 'Bizaardvark'.[34]
+
+    <h3>Friskies sponsorship</h3>
+    Grumpy Cat appeared in episodes of the Friskies YouTube game show "Will Kitty Play With It?"[4][24][35][36] In September 2013, it was announced that Grumpy Cat would become the Official Spokescat of Friskies.[37] TMZ reported that Friskies paid for flying first class, a private hotel room with king-sized bed, a personal assistant, a chauffeur, and unlimited Friskies food and bottled water.[24] On March 22, 2013, Grumpy Cat traveled to New York City promoting the show and appeared on Good Morning America[16] and Anderson Live[17] and visited Time for a photoshoot.[27] Michael Noer "interviewed" Grumpy Cat for Forbes, released March 25.[38]
+
+    <h3>Merchandising</h3>
+    According to the United States Patent and Trademark Office database, "Grumpy Cat Limited" applied to trademark "Grumpy Cat" and an image of her at the end of January 2013.[39] Licensed merchandise like t-shirts and mugs are advertised on the website and sold at Hot Topic.[2][10] Stuffed toys are also available, the official plush being produced by Gund.[40] Ganz, the company behind Webkinz, also has a small Grumpy Cat plush which allows for anyone to play with her on their Webkinz page.[41] There are also various key chains and unofficial plushes produced. Bryan said that by March 2013 they earned "mid-five figures"[5] and "low-six-figure" by May 2013.[13] The company has an estimated value of $1 million.[12] Grenade Beverage LLC makes Grumpy Cat "Grumppuccino" iced coffee beverages.[13][42][43] In December 2015, Grumpy Cat, Ltd. sued Grenade Beverage over trademark infringement when the beverage company expanded its line of Grumpy Cat coffees; however, Grenade contends the suit is without merit.[44]
+
+    The official Grumpy Cat book, Grumpy Cat: A Grumpy Book, was published on July 23, 2013, by Chronicle Books.[13] The book is available in both print and digital formats from retailers worldwide. It debuted at #8 Hardcover Nonfiction on the Publishers Weekly best seller list and #7 on the New York Times Bestseller List.[45][46] Additionally, Chronicle Books published The Grumpy Cat 2014 Wall Calendar on July 23, 2013.[47] Another Grumpy Cat book called The Grumpy Guide to Life: Observations by Grumpy Cat was published by Chronicle Books, which debuted at #3 on the New York Times Bestseller List.[48] Dynamite Entertainment publishes a comic book about Grumpy Cat and her brother, titled The Misadventures of Grumpy Cat and Pokey.[49] Dover Publications has also published Grumpy Cat paper doll, sticker, coloring, and tattoo books.[50] An official video game called Grumpy Cat: Unimpressed was released by Ganz Studios and is playable on Facebook, iOS devices and Android devices. The game is match-three game where if combos are performed, Grumpy Cat's insults will appear. The players unlock her memes as they pass each level and she can be made angry with meows, hairballs and laser pointers.
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+
+body {
+    font-family: "Helvetica";
+}
+
+h3 {
+  font-family: 'ClarendonTextPro';
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container img  {
+    margin: 2px;
+    display: block;
+    max-width:220px;
+    max-height:220px;
+    min-width: 180px;
+    width: auto;
+    height: auto;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: black;
+}
